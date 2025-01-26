@@ -21,7 +21,7 @@ Sigue estos pasos para configurar y ejecutar la aplicación:
 
 1. **Clona el Repositorio**:
    ```bash
-   git clone https://github.com/tu_usuario/tu_repositorio.git
+   git clone https://github.com/vcornejo22/reservas_canchas_deportivas.git
    cd reservar_canchas_deportivas
    ```
 2.  **Construye y ejecuta los contenedores**:  
