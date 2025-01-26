@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="booking-container">
+    <h2>Reservar Cancha</h2>
+    
+    <form method="POST" action="{{ url_for('booking') }}" class="booking-form">
+        <div class="form-group">
+            <label for="field_id">Selecciona cancha:</label>
+            <select id="field_id" name="field_id" required>
+                <option value="">Escoge cancha...</option>
+                {% for field in fields %}
+                    <option value="{{ field.id }}" data-price="{{ field.price_per_hour }}">
+                        {{ field.name }} - S/{{ "%.2f"|format(field.price_per_hour) }}/hour
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="booking_date">Fecha:</label>
+            <input type="date" id="booking_date" name="booking_date" 
+                   min="{{ today }}" required>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="start_time">Inicio de tiempo:</label>
+                <input type="time" id="start_time" name="start_time" 
+                       min="06:00" max="22:00" required>
+            </div>
+
+            <div class="form-group">
+                <label for="end_time">Fin de tiempo:</label>
+                <input type="time" id="end_time" name="end_time" 
+                       min="07:00" max="23:00" required>
+            </div>
+        </div>
+
+        <div class="price-calculator">
+            <p>Precio estimado: S/<span id="estimated-price">0.00</span></p>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Reservar Ahora</button>
+    </form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fieldSelect = document.getElementById('field_id');
+    const startTime = document.getElementById('start_time');
+    const endTime = document.getElementById('end_time');
+    const estimatedPrice = document.getElementById('estimated-price');
+
+    function calculatePrice() {
+        const selectedField = fieldSelect.options[fieldSelect.selectedIndex];
+        if (!selectedField.value) return;
+
+        const pricePerHour = parseFloat(selectedField.dataset.price);
+        const start = startTime.value;
+        const end = endTime.value;
+
+        if (start && end) {
+            const startDate = new Date(`2000-01-01T${start}`);
+            const endDate = new Date(`2000-01-01T${end}`);
+            const hours = (endDate - startDate) / (1000 * 60 * 60);
+            
+            if (hours > 0) {
+                const total = (pricePerHour * hours).toFixed(2);
+                estimatedPrice.textContent = total;
+            }
+        }
+    }
+
+    fieldSelect.addEventListener('change', calculatePrice);
+    startTime.addEventListener('change', calculatePrice);
+    endTime.addEventListener('change', calculatePrice);
+});
+</script>
+{% endblock %}
