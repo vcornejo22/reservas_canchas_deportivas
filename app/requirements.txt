@@ -1,0 +1,7 @@
+flask
+mysql-connector-python
+werkzeug
+python-dotenv==1.0.1
+flask-socketio
+eventlet
+requests

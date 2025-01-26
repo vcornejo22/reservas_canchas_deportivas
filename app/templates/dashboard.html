@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<div class="dashboard-container">
+    <h2>Bienvenido, {{ session['username'] }}!</h2>
+    
+    <div class="dashboard-actions">
+        <a href="{{ url_for('booking') }}" class="btn btn-primary">Nueva Reserva</a>
+    </div>
+
+    <div class="bookings-section">
+        <h3>Tus reservas</h3>
+        {% if bookings %}
+            <div class="bookings-grid">
+                {% for booking in bookings %}
+                    <div class="booking-card">
+                        <div class="booking-header">
+                            <h4>{{ booking.field_name }}</h4>
+                            <span class="status status-{{ booking.status }}">{{ booking.status }}</span>
+                        </div>
+                        <div class="booking-details">
+                            <p><strong>Date:</strong> {{ booking.booking_date.strftime('%Y-%m-%d') }}</p>
+                            <p><strong>Time:</strong> {{ booking.start_time }} - {{ booking.end_time }}</p>
+                            
+                            <p><strong>Total Price:</strong> S/{{ "%.2f"|format(booking.total_price) }}</p>
+                        </div>
+                        {% if booking.status == 'pending' %}
+                            <div class="booking-actions">
+                                <form method="POST" action="{{ url_for('cancel_booking', booking_id=booking.id) }}" style="display: inline;">
+                                    <button type="submit" class="btn btn-danger">Cancel</button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="no-bookings">Aún no tienes ninguna reserva.</p>
+        {% endif %}
+    </div>
+    <!-- Columna derecha para el chatbot -->
+<div class="chatbot-section">
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h3>Asistente Virtual</h3>
+            <div class="chat-controls">
+                <span id="connection-status" class="connection-status">⚪</span>
+                <button id="minimize-chat" class="minimize-btn">-</button>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatMessages">
+            <!-- Los mensajes se agregarán dinámicamente aquí -->
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button id="sendMessage">Send</button>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const socket = io();
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendMessage');
+        const minimizeBtn = document.getElementById('minimize-chat');
+        const chatContainer = document.querySelector('.chatbot-container');
+        const connectionStatus = document.getElementById('connection-status');
+    
+        // Manejo de conexión
+        socket.on('connect', () => {
+            connectionStatus.style.color = '#28a745';
+            connectionStatus.title = 'Connected';
+        });
+    
+        socket.on('disconnect', () => {
+            connectionStatus.style.color = '#dc3545';
+            connectionStatus.title = 'Disconnected';
+        });
+    
+        function addMessage(message, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            // Reemplazar los saltos de línea con <br> y mantener el formato
+            const formattedMessage = message.data ? message.data.split('\n').map(line => {
+                // Preservar los espacios en blanco al inicio de cada línea
+                const spacedLine = line.replace(/^ +/, match => '&nbsp;'.repeat(match.length));
+                return spacedLine || '&nbsp;'; // Reemplazar líneas vacías con &nbsp;
+            }).join('<br>') : message;
+
+            messageDiv.innerHTML = formattedMessage;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === '') return;
+    
+            // Agregar mensaje del usuario
+            addMessage(message, true);
+            
+            // Enviar mensaje al servidor
+            socket.emit('message', { message: message });
+            
+            // Limpiar input
+            userInput.value = '';
+        }
+    
+        // Escuchar mensajes del servidor
+        socket.on('message', function(data) {
+            addMessage(data.data);
+        });
+    
+        // Event listeners
+        sendButton.addEventListener('click', sendMessage);
+        
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    
+        minimizeBtn.addEventListener('click', function() {
+            chatContainer.classList.toggle('minimized');
+            minimizeBtn.textContent = chatContainer.classList.contains('minimized') ? '+' : '-';
+        });
+    
+        // Sugerencias de mensajes
+        const suggestions = [
+            "¿Cómo hago una reserva?",
+            "¿Cuáles son sus precios?",
+            "¿Cómo puedo cancelar mi reserva?",
+            "¿Cúal es su horario de atención?",
+            "¿Cómo puedo contactar con el servicio al cliente?"
+        ];
+    
+        const suggestionsDiv = document.createElement('div');
+        suggestionsDiv.className = 'chat-suggestions';
+
+        suggestions.forEach(suggestion => {
+            const button = document.createElement('button');
+            button.className = 'suggestion-btn';
+            button.textContent = suggestion;
+            button.onclick = () => {
+                userInput.value = suggestion;
+                sendMessage();
+            };
+            suggestionsDiv.appendChild(button);
+        });
+        
+        chatMessages.appendChild(suggestionsDiv);
+    });
+    </script>
+{% endblock %}

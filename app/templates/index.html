@@ -1,0 +1,368 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- FullCalendar CSS -->
+<link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/main.min.css' rel='stylesheet' />
+<link href='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.10/main.min.css' rel='stylesheet' />
+<link href='https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.10/main.min.css' rel='stylesheet' />
+
+<!-- FullCalendar JS -->
+<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/main.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.10/main.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.10/main.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.10/main.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/locales/es.global.min.js'></script>
+<style>
+.calendar-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.field-selector {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.field-selector select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+.legend {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+
+.available {
+    background-color: #28a745;
+}
+
+.pending {
+    background-color: #ffc107;
+}
+
+.confirmed {
+    background-color: #dc3545;
+}
+
+.fc-event {
+    cursor: pointer;
+}
+
+/* Modal styles */
+.booking-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.time-slot {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.time-slot.available {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.time-slot.selected {
+    background-color: #4caf50;
+    color: white;
+}
+
+.time-slot.unavailable {
+    background-color: #ffebee;
+    color: #c62828;
+    cursor: not-allowed;
+}
+</style>
+
+
+<div class="home-container">
+    <h1>Bienvenido a SportZone</h1>
+    <div class="features">
+        <div class="feature-card">
+            <h3>Diversidad de canchas</h3>
+            <p>Elija entre nuestra variedad de canchas sintéticos para sus actividades deportivas</p>
+        </div>
+        <div class="feature-card">
+            <h3>Reserva fácil</h3>
+            <p>Reserva tu campo preferido en sólo unos clics</p>
+        </div>
+        <div class="feature-card">
+            <h3>Horario flexible</h3>
+            <p>Disponible de 9:00 AM a 11:00 PM</p>
+        </div>
+    </div>
+    <!-- Calendario  -->
+    <div class="calendar-container">
+        <div class="field-selector">
+            <select id="fieldSelect">
+                <option value="">Selecciona la cancha...</option>
+                {% for field in fields %}
+                <option value="{{ field.id }}">{{ field.name }} - S/{{ field.price_per_hour }}/hora</option>
+                {% endfor %}
+            </select>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color available"></div>
+                    <span>Disponible</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color pending"></div>
+                    <span>Pendiente</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color confirmed"></div>
+                    <span>Confirmado</span>
+                </div>
+            </div>
+        </div>
+        <div id="calendar"></div>
+    </div>
+    
+    <!-- Modal for booking -->
+    <div id="bookingModal" class="booking-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Reservar un cancha</h2>
+            <p id="selectedDate"></p>
+            <div class="time-slots" id="timeSlots"></div>
+            <button id="bookButton" class="btn btn-primary" disabled>Reservar hora seleccionada</button>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        {% if 'user_id' not in session %}
+            <a href="{{ url_for('register') }}" class="btn btn-primary">Registrar</a>
+            <a href="{{ url_for('login') }}" class="btn btn-secondary">Ingresar</a>
+        {% else %}
+            <a href="{{ url_for('booking') }}" class="btn btn-primary">Reservar un campo</a>
+        {% endif %}
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let calendar;
+        let selectedField = null;
+        let selectedTimeSlot = null;
+        const modal = document.getElementById('bookingModal');
+        const closeModal = document.querySelector('.close-modal');
+        const fieldSelect = document.getElementById('fieldSelect');
+        const bookButton = document.getElementById('bookButton');
+    
+        // Inicializar el calendario
+        const calendarEl = document.getElementById('calendar');
+        calendar = new FullCalendar.Calendar(calendarEl, {
+            locale: "es",
+            initialView: 'dayGridMonth',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek'
+            },
+            selectable: true,
+            selectMirror: true,
+            select: function(info) {
+                if (!selectedField) {
+                    alert('Por favor seleccione un campo primero');
+                    return;
+                }
+                showBookingModal(info.start);
+            },
+            events: function(info, successCallback, failureCallback) {
+                if (!selectedField) {
+                    successCallback([]);
+                    return;
+                }
+                
+                fetch(`/get_bookings/${selectedField}/${info.start.valueOf()}/${info.end.valueOf()}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        successCallback(data.map(booking => ({
+                            title: booking.status,
+                            start: booking.start_time,
+                            end: booking.end_time,
+                            color: getStatusColor(booking.status)
+                        })));
+                    })
+                    .catch(error => {
+                        console.error('Error fetching events:', error);
+                        failureCallback(error);
+                    });
+            }
+        });
+    
+        calendar.render();
+    
+        // Event Listeners
+        fieldSelect.addEventListener('change', function(e) {
+            selectedField = e.target.value;
+            calendar.refetchEvents();
+        });
+    
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    
+        window.addEventListener('click', function(e) {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    
+        bookButton.addEventListener('click', function() {
+            if (!selectedTimeSlot) return;
+    
+            const bookingData = {
+                field_id: selectedField,
+                date: selectedTimeSlot.date,
+                start_time: selectedTimeSlot.start,
+                end_time: selectedTimeSlot.end
+            };
+    
+            fetch('/create_booking', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(bookingData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Booking created successfully!');
+                    modal.style.display = 'none';
+                    calendar.refetchEvents();
+                } else {
+                    alert(data.error || 'Error creating booking');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error creating booking');
+            });
+        });
+    
+        // Helper Functions
+        function getStatusColor(status) {
+            const colors = {
+                'available': '#28a745',
+                'pending': '#ffc107',
+                'confirmed': '#dc3545'
+            };
+            return colors[status] || '#6c757d';
+        }
+    
+        function showBookingModal(date) {
+            const formattedDate = date.toLocaleDateString();
+            document.getElementById('selectedDate').textContent = `Fecha seleccionada: ${formattedDate}`;
+            
+            // Generate time slots
+            const timeSlots = document.getElementById('timeSlots');
+            timeSlots.innerHTML = '';
+            
+            const hours = generateTimeSlots(date);
+            hours.forEach(slot => {
+                const div = document.createElement('div');
+                div.className = `time-slot ${slot.available ? 'available' : 'unavailable'}`;
+                div.textContent = `${slot.start} - ${slot.end}`;
+                
+                if (slot.available) {
+                    div.addEventListener('click', () => {
+                        document.querySelectorAll('.time-slot').forEach(el => {
+                            el.classList.remove('selected');
+                        });
+                        div.classList.add('selected');
+                        selectedTimeSlot = {
+                            date: date,
+                            start: slot.start,
+                            end: slot.end
+                        };
+                        bookButton.disabled = false;
+                    });
+                }
+                
+                timeSlots.appendChild(div);
+            });
+    
+            modal.style.display = 'block';
+        }
+    
+        function generateTimeSlots(date) {
+            // Este es un ejemplo simple - deberías obtener la disponibilidad real del servidor
+            const slots = [];
+            const startHour = 8; // 8 AM
+            const endHour = 22; // 10 PM
+            
+            for (let hour = startHour; hour < endHour; hour++) {
+                slots.push({
+                    start: `${hour}:00`,
+                    end: `${hour + 1}:00`,
+                    available: Math.random() > 0.3 // Simulación de disponibilidad
+                });
+            }
+            
+            return slots;
+        }
+    });
+    </script>
+{% endblock %}

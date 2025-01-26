@@ -1,0 +1,44 @@
+services:
+  flask-pa2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flask-pa2
+    ports:
+      - "8000:5000"
+    environment:
+      FLASK_ENV: development
+      FLASK_DEBUG: "on"
+      FLASK_APP: ./app.py
+      MYSQL_HOST: mysql-db
+      MYSQL_PORT: $MYSQL_PORT
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+    depends_on:
+      - mysql-app
+    volumes:
+      - ./app:/app
+    networks:
+      - pa_net
+
+  mysql-app:
+    image: mysql:8.0-oracle
+    container_name: mysql-app
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - pa_net
+
+volumes:
+  db_data:
+
+networks:
+  pa_net:
+    driver: bridge
