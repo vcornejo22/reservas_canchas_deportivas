@@ -1,0 +1,1294 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "¿Cómo reservo un campo de fútbol?"
+    },
+    {
+      "role": "assistant",
+      "content": "Puedes reservar un campo de fútbol desde nuestra web. Solo tienes que seleccionar la fecha, hora y campo disponible, y completar el pago."
+    },
+    {
+      "role": "user",
+      "content": "¿Cuánto cuesta reservar un campo de tenis?"
+    },
+    {
+      "role": "assistant",
+      "content": "No contamos con un campo de tenis por el momento."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué horarios tienen disponibles para reservar una cancha de fútbol?"
+    },
+    {
+      "role": "assistant",
+      "content": "Nuestros campos de fútbol están disponibles de lunes a domingo, desde las 8:00 AM hasta las 10:00 PM. Puedes verificar la disponibilidad específica para cada horario en nuestra plataforma de reservas."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen canchas de básquet?"
+    },
+    {
+      "role": "assistant",
+      "content": "Por el momento solo contamos con campos de fútbol disponibles para reserva. Estamos trabajando en expandir nuestras instalaciones en el futuro."
+    },
+    {
+      "role": "user",
+      "content": "¿Cuál es el precio por hora?"
+    },
+    {
+      "role": "assistant",
+      "content": "El precio por hora del campo de fútbol es de S/50. Ofrecemos descuentos especiales para reservas de más de 2 horas y para clientes frecuentes."
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo cancelar una reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, puedes cancelar tu reserva hasta 24 horas antes de la hora programada para recibir un reembolso completo. Las cancelaciones con menos de 24 horas de anticipación tienen un cargo del 50%."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen iluminación nocturna?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, todos nuestros campos de fútbol cuentan con iluminación profesional para partidos nocturnos, permitiendo jugar cómodamente hasta las 10:00 PM."
+    },
+    {
+      "role": "user",
+      "content": "¿Cómo puedo reservar un campo de fútbol?"
+    },
+    {
+      "role": "assistant",
+      "content": "Puedes reservar un campo de fútbol ingresando a nuestro sitio web, seleccionando la fecha, hora y campo que desees, y luego confirmando tu reserva con el pago."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen campos para otros deportes?"
+    },
+    {
+      "role": "assistant",
+      "content": "Por el momento, solo contamos con campos para fútbol. Estamos trabajando para agregar más opciones en el futuro."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué horarios están disponibles para reservar?"
+    },
+    {
+      "role": "assistant",
+      "content": "Nuestros campos están disponibles para reserva de lunes a domingo, desde las 8:00 a.m. hasta las 10:00 p.m. La disponibilidad específica depende de las reservas ya realizadas."
+    },
+    {
+      "role": "user",
+      "content": "¿Cómo puedo cancelar una reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "Para cancelar una reserva, ingresa a tu cuenta en nuestro sitio web, ve a la sección 'Mis Reservas', selecciona la reserva que deseas cancelar y haz clic en 'Cancelar'. Recuerda revisar nuestras políticas de cancelación."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué métodos de pago aceptan?"
+    },
+    {
+      "role": "assistant",
+      "content": "Aceptamos pagos con tarjeta de crédito, débito y transferencias bancarias. Pronto agregaremos más métodos de pago."
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo hacer una reserva por teléfono?"
+    },
+    {
+      "role": "assistant",
+      "content": "Por ahora, todas las reservas deben realizarse a través de nuestra plataforma web para garantizar disponibilidad y rapidez en el proceso."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué pasa si llego tarde a mi reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "Si llegas tarde a tu reserva, el tiempo perdido no será reembolsado. Te recomendamos llegar 10 minutos antes para aprovechar al máximo tu tiempo en el campo."
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo modificar la hora de mi reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, puedes modificar la hora de tu reserva siempre y cuando haya disponibilidad. Ve a la sección 'Mis Reservas' en nuestra web y selecciona la opción de modificar."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué sucede si llueve durante mi reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "En caso de lluvia, te ofreceremos la posibilidad de reprogramar tu reserva para otra fecha. Contáctanos a través del soporte para gestionar este cambio."
+    },
+    {
+      "role": "user",
+      "content": "¿Ofrecen descuentos para reservas frecuentes?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! Contamos con descuentos para clientes frecuentes. Si reservas más de tres veces al mes, recibirás un descuento en tu próxima reserva."
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo reservar varias horas seguidas?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, puedes reservar varias horas seguidas, siempre que el horario esté disponible. Selecciona las horas consecutivas al realizar tu reserva en nuestra plataforma."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué medidas de seguridad tienen en los campos?"
+    },
+    {
+      "role": "assistant",
+      "content": "Contamos con personal capacitado, cámaras de seguridad y una política de primeros auxilios en caso de emergencias para garantizar tu seguridad mientras disfrutas del juego."
+    },
+    {
+      "role": "user",
+      "content": "¿Hay estacionamiento cerca de los campos?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, contamos con un estacionamiento gratuito cercano a los campos para nuestros clientes."
+    },
+    {
+      "role": "user",
+      "content": "¿Ofrecen alquiler de balones o equipo deportivo?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, puedes alquilar balones de fútbol y otros accesorios directamente en el lugar. Consulta nuestra sección de servicios adicionales al momento de reservar."
+    },
+    {
+      "role": "user",
+      "content": "¿Cuáles son las dimensiones de los campos?"
+    },
+    {
+      "role": "assistant",
+      "content": "Nuestros campos tienen dimensiones estándar para fútbol 7: 50 metros de largo por 30 metros de ancho. Si necesitas más información, no dudes en preguntar."
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo traer comida o bebidas al campo?"
+    },
+    {
+      "role": "assistant",
+      "content": "Está permitido traer bebidas, pero por razones de seguridad no se permite el ingreso de comida al área del campo. Contamos con un snack bar cercano donde puedes adquirir alimentos."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen vestidores?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, contamos con vestidores completos para hombres y mujeres, equipados con duchas, casilleros y baños."
+    },
+    {
+      "role": "user",
+      "content": "¿Hay estacionamiento?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, disponemos de estacionamiento gratuito para nuestros clientes con capacidad para 30 vehículos."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen servicio de alquiler de balones?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, ofrecemos servicio de alquiler de balones por S/5 por partido. También puedes traer tu propio balón si lo prefieres."
+    },
+    {
+      "role": "user",
+      "content": "¿El campo es techado?"
+    },
+    {
+      "role": "assistant",
+      "content": "No, nuestros campos son al aire libre, pero contamos con un buen sistema de drenaje para días lluviosos."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen cafetería o venta de bebidas?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, contamos con una cafetería que ofrece bebidas hidratantes, agua, snacks y comida rápida. También tenemos máquinas expendedoras cerca de los campos."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué tipo de superficie tiene la cancha?"
+    },
+    {
+      "role": "assistant",
+      "content": "Nuestros campos son de césped sintético de última generación, con un mantenimiento regular para garantizar su óptimo estado."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen área para espectadores?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, cada campo cuenta con graderías techadas con capacidad para 50 personas, donde los espectadores pueden ver cómodamente los partidos."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen wifi?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, ofrecemos wifi gratuito en todas nuestras instalaciones. La contraseña se proporciona en recepción al momento de tu llegada."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen botiquín de primeros auxilios?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, contamos con botiquín de primeros auxilios y personal capacitado para emergencias básicas. También tenemos convenio con servicios de emergencia cercanos."
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo pagar en efectivo al llegar?"
+    },
+    {
+      "role": "assistant",
+      "content": "Por el momento, todas las reservas deben pagarse en línea a través de nuestra plataforma para confirmar la disponibilidad."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué pasa si otra persona está usando el campo que reservé?"
+    },
+    {
+      "role": "assistant",
+      "content": "Si esto ocurre, contacta a nuestro personal de soporte inmediatamente. Nos aseguraremos de resolver el problema y garantizar tu tiempo reservado."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen algún código de vestimenta para usar los campos?"
+    },
+    {
+      "role": "assistant",
+      "content": "Recomendamos el uso de ropa deportiva y zapatillas adecuadas para césped sintético. El uso de tacos metálicos no está permitido para preservar la calidad del campo."
+    },
+    {
+      "role": "user",
+      "content": "¿Hay vestuarios en las instalaciones?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, nuestras instalaciones cuentan con vestuarios equipados con duchas y casilleros para tu comodidad."
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo reservar un campo para un torneo?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! Para reservar un campo para un torneo, contáctanos directamente para coordinar los detalles y asegurarte de que todo esté listo para el evento."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué hago si mi reserva no aparece en mi cuenta?"
+    },
+    {
+      "role": "assistant",
+      "content": "Si tu reserva no aparece en tu cuenta, verifica que el pago se haya procesado correctamente. Si el problema persiste, contáctanos a través del soporte con los detalles de tu reserva."
+    },
+    {
+      "role": "user",
+      "content": "¿Los campos están disponibles los días feriados?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, los campos están disponibles los días feriados. Sin embargo, te recomendamos reservar con anticipación, ya que suelen ser días de alta demanda."
+    },
+    {
+      "role": "user",
+      "content": "¿Ofrecen reembolsos por cancelaciones?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, ofrecemos reembolsos si la cancelación se realiza con al menos 24 horas de anticipación. Consulta nuestras políticas de cancelación para más detalles."
+    },
+    {
+      "role": "user",
+      "content": "¿Cuánto tiempo dura una reserva de campo?"
+    },
+    {
+      "role": "assistant",
+      "content": "Cada reserva tiene una duración de 1 hora. Si deseas más tiempo, puedes agregar horas adicionales durante el proceso de reserva."
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo reservar para una liga semanal?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, ofrecemos planes para ligas semanales. Contáctanos para coordinar las fechas y horarios fijos."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué pasa si se va la luz durante mi reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "En caso de un corte de luz, reprogramaremos tu reserva sin costo adicional. Nos disculpamos por cualquier inconveniente."
+    },
+    {
+      "role": "user",
+      "content": "¿Hay áreas de espera para los jugadores?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, contamos con áreas de espera cerca de los campos, donde los jugadores pueden descansar antes o después de su reserva."
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo llevar a mi mascota mientras juego?"
+    },
+    {
+      "role": "assistant",
+      "content": "Lamentablemente, no está permitido llevar mascotas a las áreas de juego por razones de seguridad y limpieza."
+    },
+    {
+      "role": "user",
+      "content": "¿Hay un límite de jugadores por campo?"
+    },
+    {
+      "role": "assistant",
+      "content": "Recomendamos un máximo de 14 jugadores por campo para garantizar un juego cómodo y seguro."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen promociones para grupos?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, ofrecemos un 15% de descuento para reservas regulares semanales y un 20% para escuelas de fútbol o equipos que reserven más de 4 horas semanales."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué hago si hay algún problema con las instalaciones durante mi reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "Contamos con personal de mantenimiento disponible durante todo el horario de operación. Puedes reportar cualquier inconveniente en recepción o llamar al número de emergencias interno: (+1) 999-8888."
+    },
+    {
+      "role": "user",
+      "content": "¿Organizan torneos?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, organizamos torneos mensuales para diferentes categorías. Puedes inscribir a tu equipo en recepción o través de nuestra web. Ofrecemos premios y trofeos para los ganadores."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen servicio de árbitros?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, contamos con árbitros certificados disponibles por un costo adicional de S/30 por partido. Debes solicitar este servicio con al menos 24 horas de anticipación."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué pasa si llueve el día de mi reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "En caso de lluvia fuerte que impida el juego, te ofrecemos la opción de reprogramar tu reserva sin costo adicional o recibir un reembolso completo."
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo modificar mi reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, puedes modificar tu reserva hasta 48 horas antes sin costo. Cambios con menos tiempo tienen un cargo administrativo de S/10, sujeto a disponibilidad."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen servicio de entrenador personal?"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, contamos con entrenadores certificados disponibles para clases particulares o grupales. Las tarifas comienzan en S/40 por hora. Puedes consultar sus perfiles y disponibilidad en nuestra web."
+    },
+    {
+      "role": "user",
+      "content": "¿Cómo puedo presentar una queja o sugerencia?"
+    },
+    {
+      "role": "assistant",
+      "content": "Puedes presentar quejas o sugerencias a través de nuestro formulario en línea, en el libro de reclamaciones en recepción, o enviando un email a atencion@canchas.com. Respondemos en un máximo de 24 horas."
+    },
+    {
+      "role": "user",
+      "content": "¿Cómo puedo reservar un campo?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Súper fácil! Solo entra a nuestra página, elige el día y la hora que te convenga, y confirma la reserva. ¡No olvides completar el pago para asegurar tu lugar!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué pasa si llego tarde?"
+    },
+    {
+      "role": "assistant",
+      "content": "Tranquilo, el campo estará listo para ti, pero el tiempo perdido no se recupera. ¡Así que trata de llegar un poquito antes para aprovechar al máximo!"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay algo más aparte de fútbol?"
+    },
+    {
+      "role": "assistant",
+      "content": "Por ahora, solo fútbol, pero estamos trabajando en traer más deportes pronto. ¡Mantente atento!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué hago si no puedo ir el día que reservé?"
+    },
+    {
+      "role": "assistant",
+      "content": "No pasa nada, puedes cambiar la fecha desde tu cuenta en nuestra web, siempre y cuando lo hagas con tiempo. 😉"
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo llevar comida al campo?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! Solo asegúrate de mantener el área limpia. Y si no quieres llevar nada, tenemos un snack bar con todo lo necesario. 🍔⚽"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay descuentos?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Obvio! Si reservas varias veces al mes, te damos un descuentazo. ¡Es nuestra manera de agradecerte!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué pasa si hay mal clima?"
+    },
+    {
+      "role": "assistant",
+      "content": "Si el clima no coopera, no te preocupes. Te ayudamos a reprogramar tu reserva sin costo adicional. 😊"
+    },
+    {
+      "role": "user",
+      "content": "¿Cómo puedo reservar un campo de fútbol?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Súper fácil! Solo entra a nuestra página, elige el día y la hora que te convenga, y confirma la reserva. ¡No olvides completar el pago para asegurar tu lugar!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué pasa si llego tarde?"
+    },
+    {
+      "role": "assistant",
+      "content": "Tranquilo, el campo estará listo para ti, pero el tiempo perdido no se recupera. ¡Así que trata de llegar un poquito antes para aprovechar al máximo!"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay algo más aparte de fútbol?"
+    },
+    {
+      "role": "assistant",
+      "content": "Por ahora, solo fútbol, pero estamos trabajando en traer más deportes pronto. ¡Mantente atento!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué hago si no puedo ir el día que reservé?"
+    },
+    {
+      "role": "assistant",
+      "content": "No pasa nada, puedes cambiar la fecha desde tu cuenta en nuestra web, siempre y cuando lo hagas con tiempo. 😉"
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo llevar comida al campo?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! Solo asegúrate de mantener el área limpia. Y si no quieres llevar nada, tenemos un snack bar con todo lo necesario. 🍔⚽"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay descuentos?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Obvio! Si reservas varias veces al mes, te damos un descuentazo. ¡Es nuestra manera de agradecerte!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué pasa si hay mal clima?"
+    },
+    {
+      "role": "assistant",
+      "content": "Si el clima no coopera, no te preocupes. Te ayudamos a reprogramar tu reserva sin costo adicional. 😊"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay algún servicio de limpieza?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! Nuestro equipo de limpieza se encargará de mantener tu campo limpio y listo para el próximo partido. ¡No te preocupes!"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay algún servicio de mantenimiento?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! Nuestro equipo de mantenimiento se encargará de mantener tu campo en perfecto estado. ¡No te preocupes!"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay algún servicio de seguridad?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! Nuestro equipo de seguridad se encargará de mantener tu campo seguro. ¡No te preocupes!"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay algún servicio de transporte?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡No! Por el momento no contamos con ese servicio."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen pelotas profesionales?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! Tenemos balones oficiales Nike y Adidas para alquilar por S/5. ¡Están en perfectas condiciones! 🏆⚽"
+    },
+    {
+      "role": "user",
+      "content": "¿Se puede reservar para un cumpleaños?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Por supuesto! 🎉 Tenemos paquetes especiales para cumpleaños que incluyen 2 horas de campo, área para torta y decoración básica. ¡Escríbenos para más detalles!"
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen promociones para estudiantes?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro que sí! 📚 Con tu carnet de estudiante tienes 15% de descuento de lunes a viernes hasta las 5pm. ¡Aprovecha!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué pasa si me lesiono jugando?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Tu seguridad es primero! 🏥 Tenemos botiquín de primeros auxilios y personal capacitado. Además, estamos cerca de una clínica por si necesitas atención adicional."
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo hacer una reserva recurrente?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! 📅 Puedes programar reservas semanales y te damos 20% de descuento. ¡Perfecto para equipos que entrenan regularmente!"
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen servicio de fotos o video?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 📸 Podemos grabar tu partido por S/30 la hora. ¡Perfecto para analizar jugadas o guardar momentos especiales!"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay wifi en las canchas?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Por supuesto! 📱 Tenemos wifi gratis en toda la instalación. La clave te la damos cuando llegues. ¡Comparte tus mejores jugadas!"
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen alguna app móvil?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 📱 Descarga nuestra app para reservar más fácil, ver disponibilidad en tiempo real y acceder a promociones exclusivas. ¡Búscanos como 'CanchasApp'!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué medidas de bioseguridad tienen?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Tu salud es prioridad! 😷 Desinfectamos los campos entre partidos, tenemos dispensadores de gel y control de aforo. ¡Juega tranquilo!"
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen servicio de hidratación?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! 🥤 Tenemos máquinas expendedoras con bebidas deportivas, agua y snacks. También puedes traer tus propias bebidas."
+    },
+    {
+      "role": "user",
+      "content": "¿Se puede hacer una reserva para ver un partido importante?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 📺 Tenemos área con pantalla gigante para ver partidos. Reserva con anticipación para eventos importantes. ¡Trae a tus amigos!"
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen algún grupo de WhatsApp para reservas?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Todo es por la web! 💻 Así aseguramos que las reservas se manejen en orden y tengas tu confirmación al instante. ¡Es más seguro!"
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo organizar un campeonato?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro que sí! 🏆 Tenemos paquetes especiales para torneos, incluyen arbitraje, premios y organización. ¡Contáctanos para más detalles!"
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen servicio de uniformes?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 👕 Alquilamos chalecos de diferentes colores por S/2 por unidad. ¡Perfectos para distinguir los equipos!"
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo reservar un campo para una fiesta privada?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Por supuesto! 🎉 Ofrecemos paquetes para eventos privados que incluyen el campo, decoración básica y acceso a nuestra cafetería. ¡Contáctanos para más detalles!"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay descuentos para reservas en horarios menos concurridos?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 🌟 Ofrecemos un 20% de descuento para reservas entre 8:00 AM y 12:00 PM, de lunes a viernes. ¡Perfecto para aprovechar tu mañana!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué incluye el alquiler del campo?"
+    },
+    {
+      "role": "assistant",
+      "content": "El alquiler incluye el uso del campo por 1 hora, iluminación nocturna si es necesario, y acceso a los vestuarios. ¡También puedes alquilar balones por S/5!"
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo traer a mi fotógrafo para un evento?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! 📸 Eres libre de traer a tu fotógrafo. Si necesitas recomendaciones o permisos especiales, contáctanos con anticipación."
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen algún programa de lealtad?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 🎉 Nuestro programa de lealtad te da puntos por cada reserva realizada, los cuales puedes canjear por descuentos o alquileres gratis. ¡Regístrate ya!"
+    },
+    {
+      "role": "user",
+      "content": "¿Cuáles son las reglas para usar el campo?"
+    },
+    {
+      "role": "assistant",
+      "content": "Las principales reglas son: usar ropa deportiva adecuada, no tacos metálicos, mantener el área limpia y respetar tu tiempo de reserva. ¡Así todos disfrutan al máximo!"
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo organizar un evento empresarial?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Por supuesto! 🏢 Organizamos eventos empresariales que incluyen alquiler de campo, servicio de catering y equipo audiovisual. Contáctanos para armar un paquete personalizado."
+    },
+    {
+      "role": "user",
+      "content": "¿Hay actividades para niños?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 👦👧 Organizamos mini torneos y actividades recreativas para niños los fines de semana. Consulta disponibilidad en nuestra web."
+    },
+    {
+      "role": "user",
+      "content": "¿Qué hago si hay un problema con mi reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "Si tienes algún problema con tu reserva, contáctanos de inmediato a través del soporte en nuestra web o por teléfono. ¡Estamos aquí para ayudarte!"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay lockers disponibles para guardar mis cosas?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 🔒 Contamos con lockers gratuitos en los vestuarios. Solo necesitas traer tu propio candado o puedes alquilar uno en recepción."
+    },
+    {
+      "role": "user",
+      "content": "¿Cómo puedo apartar una cancha de fútbol?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Súper fácil! Solo entra a nuestra página, elige el día y la hora que te convenga, y confirma la reserva. ¡No olvides completar el pago para asegurar tu lugar!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué pasa si no llego a tiempo a mi reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "Tranquilo, el campo estará listo para ti, pero el tiempo perdido no se recupera. ¡Así que trata de llegar un poquito antes para aprovechar al máximo!"
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen algo más que fútbol?"
+    },
+    {
+      "role": "assistant",
+      "content": "Por ahora, solo fútbol, pero estamos trabajando en traer más deportes pronto. ¡Mantente atento!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué hago si no puedo asistir el día que reservé?"
+    },
+    {
+      "role": "assistant",
+      "content": "No pasa nada, puedes cambiar la fecha desde tu cuenta en nuestra web, siempre y cuando lo hagas con tiempo. 😉"
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo llevar algo de comer al lugar?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! Solo asegúrate de mantener el área limpia. Y si no quieres llevar nada, tenemos un snack bar con todo lo necesario. 🍔⚽"
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen algún descuento disponible?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Obvio! Si reservas varias veces al mes, te damos un descuentazo. ¡Es nuestra manera de agradecerte!"
+    },
+    {
+      "role": "user",
+      "content": "¿Qué pasa si el clima está malo el día de mi reserva?"
+    },
+    {
+      "role": "assistant",
+      "content": "Si el clima no coopera, no te preocupes. Te ayudamos a reprogramar tu reserva sin costo adicional. 😊"
+    },
+    {
+      "role": "user",
+      "content": "¿Tienen pelotas para jugar?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! Tenemos balones oficiales Nike y Adidas para alquilar por S/5. ¡Están en perfectas condiciones! 🏆⚽"
+    },
+    {
+      "role": "user",
+      "content": "¿Puedo reservar para celebrar un cumpleaños?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Por supuesto! 🎉 Tenemos paquetes especiales para cumpleaños que incluyen 2 horas de campo, área para torta y decoración básica. ¡Escríbenos para más detalles!"
+    },
+    {
+      "role": "user",
+      "content": "¿Hay algún descuento para estudiantes?"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro que sí! 📚 Con tu carnet de estudiante tienes 15% de descuento de lunes a viernes hasta las 5pm. ¡Aprovecha!"
+    },
+    { "role": "user", "content": "como puedo reservar una cancha de futbol" },
+    {
+      "role": "assistant",
+      "content": "Puedes reservar en nuestra web eligiendo fecha y hora disponibles y completando el pago."
+    },
+
+    { "role": "user", "content": "Cuanto cuesta x hora" },
+    {
+      "role": "assistant",
+      "content": "El costo es de S/50 por hora. Si reservas más de 2 horas, tienes descuento."
+    },
+
+    { "role": "user", "content": "hay descuentos x estudiantes" },
+    {
+      "role": "assistant",
+      "content": "Sí, ofrecemos 15% de descuento para estudiantes de lunes a viernes hasta las 5PM."
+    },
+
+    { "role": "user", "content": "tienen cancha techada" },
+    {
+      "role": "assistant",
+      "content": "No, nuestros campos son al aire libre pero cuentan con drenaje para lluvia."
+    },
+
+    { "role": "user", "content": "Se puede pagar en efectivo o solo tarjeta" },
+    {
+      "role": "assistant",
+      "content": "Por ahora solo aceptamos pagos con tarjeta o transferencia bancaria."
+    },
+
+    {
+      "role": "user",
+      "content": "Hay estacionamiento o tengo q buscar uno cerca"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, contamos con estacionamiento gratuito para nuestros clientes."
+    },
+
+    { "role": "user", "content": "Q pasa si llego tarde a mi reserva" },
+    {
+      "role": "assistant",
+      "content": "Si llegas tarde, el tiempo perdido no se recupera. Te recomendamos llegar con anticipación."
+    },
+
+    { "role": "user", "content": "puedo llevar bebidas" },
+    {
+      "role": "assistant",
+      "content": "Sí, puedes traer bebidas, pero contamos con un snack bar con opciones disponibles."
+    },
+
+    { "role": "user", "content": "Cual es la duracion minima de una reserva" },
+    {
+      "role": "assistant",
+      "content": "El tiempo mínimo de reserva es 1 hora, pero puedes agregar horas adicionales."
+    },
+
+    { "role": "user", "content": "Puedo reservar un campo para torneo" },
+    {
+      "role": "assistant",
+      "content": "Sí, organizamos torneos y puedes reservar un campo con anticipación para ello."
+    },
+
+    {
+      "role": "user",
+      "content": "me pueden devolver el dinero si cancelo mi reserva"
+    },
+    {
+      "role": "assistant",
+      "content": "Sí, si cancelas con 24 horas de anticipación te devolvemos el 100%. Menos tiempo tiene cargo del 50%."
+    },
+
+    { "role": "user", "content": "como veo la disponibilidad de canchas" },
+    {
+      "role": "assistant",
+      "content": "Puedes ver la disponibilidad en nuestra web ingresando la fecha y hora que te interesa."
+    },
+
+    { "role": "user", "content": "hacen descuentos si reservo varias veces" },
+    {
+      "role": "assistant",
+      "content": "Sí, tenemos descuentos para clientes frecuentes y para reservas de más de 3 veces al mes."
+    },
+
+    {
+      "role": "user",
+      "content": "hay algun grupo de whatsapp para coordinar reservas"
+    },
+    {
+      "role": "assistant",
+      "content": "No, todas las reservas se hacen por la web para garantizar la disponibilidad."
+    },
+
+    {
+      "role": "user",
+      "content": "como me aseguro q mi reserva esta confirmada"
+    },
+    {
+      "role": "assistant",
+      "content": "Recibirás un correo de confirmación con los detalles de tu reserva."
+    },
+
+    { "role": "user", "content": "q tipo de cesped tienen los campos" },
+    {
+      "role": "assistant",
+      "content": "Nuestros campos son de césped sintético de alta calidad."
+    },
+
+    { "role": "user", "content": "Si hay problemas con la luz q pasa" },
+    {
+      "role": "assistant",
+      "content": "Si hay un corte de luz, te ofrecemos reprogramar tu reserva sin costo."
+    },
+
+    { "role": "user", "content": "Puedo llevar a mi mascota mientras juego" },
+    {
+      "role": "assistant",
+      "content": "No, por razones de seguridad y limpieza no permitimos mascotas en las áreas de juego."
+    },
+
+    { "role": "user", "content": "Ofrecen alquiler de balones" },
+    {
+      "role": "assistant",
+      "content": "Sí, puedes alquilar balones por S/5 por partido."
+    },
+
+    {
+      "role": "user",
+      "content": "q pasa si otra persona esta ocupando mi cancha"
+    },
+    {
+      "role": "assistant",
+      "content": "Si alguien usa tu campo, contacta a nuestro personal y resolveremos la situación de inmediato."
+    },
+    {
+      "role": "user",
+      "content": "oye como hago para reservar una cancha"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Es muy fácil! Solo entra a nuestra web, elige el día y hora que quieras, y completa el pago. ¡Listo! 😊"
+    },
+    {
+      "role": "user",
+      "content": "cuanto sale x hora"
+    },
+    {
+      "role": "assistant",
+      "content": "La hora cuesta S/50. ¡Y tenemos descuentos si reservas más de 2 horas! 🎉"
+    },
+    {
+      "role": "user",
+      "content": "tienen duchas"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! Tenemos vestuarios completos con duchas y lockers para que estés súper cómodo 🚿"
+    },
+    {
+      "role": "user",
+      "content": "q pasa si llueve"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Tranqui! Si llueve fuerte, puedes reprogramar tu reserva sin costo extra o pedir reembolso 🌧️"
+    },
+    {
+      "role": "user",
+      "content": "necesito cancha para sabado"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Genial! Entra a nuestra web y revisa la disponibilidad para el sábado. ¡Reserva pronto porque los fines de semana se llenan rápido! 📅"
+    },
+    {
+      "role": "user",
+      "content": "tienen pelotas para alquilar"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! Alquilamos balones oficiales por S/5 la hora. ¡Están en perfecto estado! ⚽"
+    },
+    {
+      "role": "user",
+      "content": "se puede pagar en efectivo"
+    },
+    {
+      "role": "assistant",
+      "content": "Por ahora solo aceptamos pagos en línea para asegurar tu reserva. ¡Es más seguro y rápido! 💳"
+    },
+    {
+      "role": "user",
+      "content": "hay estacionamiento gratis"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! Tenemos estacionamiento gratuito para todos nuestros clientes 🚗"
+    },
+    {
+      "role": "user",
+      "content": "tienen promo para cumpleanos"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! 🎉 Tenemos paquetes especiales para cumples con decoración y área para torta. ¡Escríbenos para más info!"
+    },
+    {
+      "role": "user",
+      "content": "puedo llevar mi propia pelota"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Por supuesto! Puedes traer tu propio balón sin problema 👍"
+    },
+    {
+      "role": "user",
+      "content": "tienen wifi"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! WiFi gratis en todas las instalaciones. Te damos la clave cuando llegues 📱"
+    },
+    {
+      "role": "user",
+      "content": "hay descuento x varias horas"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! 15% de descuento por 2 horas o más. ¡Aprovecha! 🎉"
+    },
+    {
+      "role": "user",
+      "content": "tienen arbitros"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! Podemos conseguirte árbitro por S/30 adicionales. ¡Reserva con 24 horas de anticipación! 🏁"
+    },
+    {
+      "role": "user",
+      "content": "se puede cancelar reserva"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! Cancela hasta 24 horas antes sin costo. Después tiene una pequeña penalidad 📅"
+    },
+    {
+      "role": "user",
+      "content": "xfa necesito saber si tienen cancha libre para hoy"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! 😊 Revisa la disponibilidad en nuestra web. ¿Para qué hora la necesitas?"
+    },
+    {
+      "role": "user",
+      "content": "tienen luz para jugar d noche"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 💡 Tenemos iluminación profesional hasta las 10 PM. ¡Podrás jugar sin problemas!"
+    },
+    {
+      "role": "user",
+      "content": "q implementos necesito llevar"
+    },
+    {
+      "role": "assistant",
+      "content": "Solo tu ropa deportiva y zapatillas. Si necesitas balón, te lo alquilamos por S/5 🏃⚽"
+    },
+    {
+      "role": "user",
+      "content": "tienen promo para feriados"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 🎉 15% menos en feriados si reservas con 3 días de anticipación"
+    },
+    {
+      "role": "user",
+      "content": "necesito cancha xa 15 personas"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Perfecto! Nuestras canchas son ideales para grupos grandes. Recuerda que el máximo recomendado es 14 jugadores por partido 👥"
+    },
+    {
+      "role": "user",
+      "content": "tienen chalecos xa distinguir equipos"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Claro! 👕 Alquilamos chalecos a S/2 por unidad. ¡Tenemos varios colores!"
+    },
+    {
+      "role": "user",
+      "content": "aceptan yape o plin"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 📱 Aceptamos Yape, Plin y todas las tarjetas. ¡Tú eliges cómo pagar!"
+    },
+    {
+      "role": "user",
+      "content": "tienen bebidas heladas"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Por supuesto! 🥤 Tenemos máquinas con bebidas frías y también agua. ¡No te quedarás con sed!"
+    },
+    {
+      "role": "user",
+      "content": "se puede reservar x whatsapp"
+    },
+    {
+      "role": "assistant",
+      "content": "Todo es por la web para mantener mejor orden. ¡Es súper fácil y rápido! 💻"
+    },
+    {
+      "role": "user",
+      "content": "tienen camara xa grabar partidos"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Sí! 📹 Servicio de grabación por S/30 la hora. ¡Perfecta para analizar jugadas!"
+    },
+    { "role": "user", "content": "ola como puedo reservar un campito" },
+    {
+      "role": "assistant",
+      "content": "Hola! Puedes reservar desde nuestra web eligiendo fecha y hora disponibles y completando el pago."
+    },
+
+    { "role": "user", "content": "cuanto cobran x hora" },
+    {
+      "role": "assistant",
+      "content": "El costo es de S/50 por hora. Si reservas más de 2 horas, tienes descuento!"
+    },
+
+    { "role": "user", "content": "ai descuentos pa estudiantes" },
+    {
+      "role": "assistant",
+      "content": "Sí, tenemos 15% de descuento para estudiantes de lunes a viernes hasta las 5PM."
+    },
+
+    { "role": "user", "content": "se puede pagar en efectivo o solo tarjeta" },
+    {
+      "role": "assistant",
+      "content": "Por ahora solo aceptamos pagos con tarjeta o transferencia bancaria."
+    },
+
+    { "role": "user", "content": "si llego tarde pierdo mi tiempo" },
+    {
+      "role": "assistant",
+      "content": "Sí, el tiempo perdido no se recupera. Te recomendamos llegar a tiempo para aprovechar tu reserva."
+    },
+
+    { "role": "user", "content": "tienen para alquilar balones" },
+    {
+      "role": "assistant",
+      "content": "Sí, puedes alquilar balones por S/5 por partido. También puedes traer el tuyo!"
+    },
+
+    { "role": "user", "content": "pucha y si llueve que pasa con mi reserva" },
+    {
+      "role": "assistant",
+      "content": "Si llueve fuerte y no puedes jugar, te ofrecemos la opción de reprogramar tu reserva sin costo adicional."
+    },
+
+    { "role": "user", "content": "q horario tienen pa jugar" },
+    {
+      "role": "assistant",
+      "content": "Estamos abiertos de lunes a domingo, de 8AM a 10PM. Consulta disponibilidad en nuestra web!"
+    },
+
+    { "role": "user", "content": "como se q mi reserva ta confirmada" },
+    {
+      "role": "assistant",
+      "content": "Recibirás un correo de confirmación con los detalles de tu reserva."
+    },
+
+    { "role": "user", "content": "q pasa si alguien mas ocupa mi cancha" },
+    {
+      "role": "assistant",
+      "content": "Si esto ocurre, contacta con nuestro personal de inmediato para resolver el problema."
+    },
+
+    { "role": "user", "content": "me pueden devolver el dinero si cancelo" },
+    {
+      "role": "assistant",
+      "content": "Sí, si cancelas con 24 horas de anticipación te devolvemos el 100%. Después, hay una penalización del 50%."
+    },
+
+    { "role": "user", "content": "como hago pa reservar" },
+    {
+      "role": "assistant",
+      "content": "Fácil! Entra a nuestra web, elige el día y la hora, y confirma con el pago."
+    },
+
+    { "role": "user", "content": "hay duchas pa cambiarse" },
+    {
+      "role": "assistant",
+      "content": "Sí, contamos con vestuarios equipados con duchas y casilleros."
+    },
+
+    { "role": "user", "content": "se puede llevar chelas o no" },
+    {
+      "role": "assistant",
+      "content": "No está permitido el consumo de alcohol en las instalaciones."
+    },
+
+    { "role": "user", "content": "tienen area pa espectadores" },
+    {
+      "role": "assistant",
+      "content": "Sí, contamos con graderías techadas con capacidad para 50 personas."
+    },
+
+    { "role": "user", "content": "q tipo de cesped tienen" },
+    {
+      "role": "assistant",
+      "content": "Nuestros campos son de césped sintético de alta calidad."
+    },
+
+    { "role": "user", "content": "hay descuento si reservo varias veces" },
+    {
+      "role": "assistant",
+      "content": "Sí! Si reservas más de 3 veces al mes, obtienes descuentos especiales."
+    },
+
+    { "role": "user", "content": "tienen wifi pa conectarse" },
+    {
+      "role": "assistant",
+      "content": "Sí, ofrecemos WiFi gratuito en todas las instalaciones!"
+    },
+
+    {
+      "role": "user",
+      "content": "como me comunico si hay un problema con mi reserva"
+    },
+    {
+      "role": "assistant",
+      "content": "Puedes contactarnos a través del chat en nuestra web o llamarnos directamente."
+    }
+  ]
+}

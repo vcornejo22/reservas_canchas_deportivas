@@ -12,6 +12,7 @@
             <a href="{{ url_for('index') }}" class="brand-logo">SportZone</a>
             <ul class="nav-links">
                 {% if 'user_id' in session %}
+                    <li><a href="{{ url_for('add_payment_method') }}">Agregar Forma de pago</a></li>
                     <li><a href="{{ url_for('campos') }}">Campos Deportivos</a></li>
                     <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
                     <li><a href="{{ url_for('booking') }}">Reserva un campo</a></li>

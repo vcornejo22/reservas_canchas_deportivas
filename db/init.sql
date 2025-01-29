@@ -32,6 +32,25 @@ CREATE TABLE bookings (
     FOREIGN KEY (field_id) REFERENCES fields(id)
 );
 
+CREATE TABLE payment_methods (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    card_number VARCHAR(16) NOT NULL,
+    card_holder VARCHAR(100) NOT NULL,
+    expiration_month INT NOT NULL,
+    expiration_year INT NOT NULL,
+    card_type VARCHAR(20) NOT NULL,
+    last_four VARCHAR(4) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Modificar la tabla bookings para incluir el método de pago
+ALTER TABLE bookings
+ADD COLUMN payment_method_id INT,
+ADD COLUMN payment_status ENUM('pending', 'paid', 'failed') DEFAULT 'pending',
+ADD FOREIGN KEY (payment_method_id) REFERENCES payment_methods(id);
+
 
 -- Limpiar datos existentes (si es necesario)
 SET FOREIGN_KEY_CHECKS = 0;

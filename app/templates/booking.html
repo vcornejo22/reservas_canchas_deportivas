@@ -40,6 +40,17 @@
         <div class="price-calculator">
             <p>Precio estimado: S/<span id="estimated-price">0.00</span></p>
         </div>
+        <!-- En el formulario de reserva, agrega: -->
+<div class="form-group">
+    <label for="payment_method">Método de Pago:</label>
+    <select id="payment_method" name="payment_method_id" required>
+        {% for method in payment_methods %}
+            <option value="{{ method.id }}">
+                {{ method.card_type }} terminada en {{ method.last_four }}
+            </option>
+        {% endfor %}
+    </select>
+</div>
 
         <button type="submit" class="btn btn-primary">Reservar Ahora</button>
     </form>

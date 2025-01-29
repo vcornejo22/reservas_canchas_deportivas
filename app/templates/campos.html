@@ -1,90 +1,97 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <!-- FullCalendar CSS -->
-<link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/main.min.css' rel='stylesheet' />
-<link href='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.10/main.min.css' rel='stylesheet' />
-<link href='https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.10/main.min.css' rel='stylesheet' />
+<link
+  href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/main.min.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.10/main.min.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.10/main.min.css"
+  rel="stylesheet"
+/>
 
 <!-- FullCalendar JS -->
-<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/main.min.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.10/main.min.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.10/main.min.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.10/main.min.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/locales/es.global.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.10/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.10/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.10/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/locales/es.global.min.js"></script>
 <style>
-.calendar-container {
+  .calendar-container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 
-.field-selector {
+  .field-selector {
     margin-bottom: 20px;
     padding: 15px;
     background: #f8f9fa;
     border-radius: 5px;
-}
+  }
 
-.field-selector select {
+  .field-selector select {
     padding: 8px;
     border-radius: 4px;
     border: 1px solid #ddd;
     margin-right: 10px;
-}
+  }
 
-.legend {
+  .legend {
     margin-top: 15px;
     display: flex;
     gap: 20px;
     align-items: center;
-}
+  }
 
-.legend-item {
+  .legend-item {
     display: flex;
     align-items: center;
     gap: 5px;
-}
+  }
 
-.legend-color {
+  .legend-color {
     width: 15px;
     height: 15px;
     border-radius: 3px;
-}
+  }
 
-.available {
+  .available {
     background-color: #28a745;
-}
+  }
 
-.pending {
+  .pending {
     background-color: #ffc107;
-}
+  }
 
-.confirmed {
+  .confirmed {
     background-color: #dc3545;
-}
+  }
 
-.fc-event {
+  .fc-event {
     cursor: pointer;
-}
+  }
 
-/* Modal styles */
-.booking-modal {
+  /* Modal styles */
+  .booking-modal {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
-}
+  }
 
-.modal-content {
+  .modal-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -94,249 +101,365 @@
     border-radius: 8px;
     width: 90%;
     max-width: 500px;
-}
+  }
 
-.close-modal {
+  .close-modal {
     position: absolute;
     right: 15px;
     top: 10px;
     font-size: 24px;
     cursor: pointer;
-}
+  }
 
-.time-slots {
+  .time-slots {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 10px;
     margin: 15px 0;
-}
+  }
 
-.time-slot {
+  .time-slot {
     padding: 8px;
     text-align: center;
     border: 1px solid #ddd;
     border-radius: 4px;
     cursor: pointer;
-}
+  }
 
-.time-slot.available {
+  .time-slot.available {
     background-color: #e8f5e9;
     color: #2e7d32;
-}
+  }
 
-.time-slot.selected {
+  .time-slot.selected {
     background-color: #4caf50;
     color: white;
-}
+  }
 
-.time-slot.unavailable {
+  .time-slot.unavailable {
     background-color: #ffebee;
     color: #c62828;
     cursor: not-allowed;
+  }
+
+
+  .calendar-container {
+    display: grid;
+    gap: 20px;
+  }
+
+  .calendar-wrapper {
+    flex: 1;
+  }
+
+  .field-image {
+    width: 300px;
+  }
+
+  .field-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
 }
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
 </style>
 
 <!-- Calendario  -->
 <div class="calendar-container">
-    <div class="field-selector">
-        <select id="fieldSelect">
-            <option value="">Selecciona la cancha...</option>
-            {% for field in fields %}
-            <option value="{{ field.id }}">{{ field.name }} - S/{{ field.price_per_hour }}/hora</option>
-            {% endfor %}
-        </select>
-        <div class="legend">
-            <div class="legend-item">
-                <div class="legend-color available"></div>
-                <span>Disponible</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color pending"></div>
-                <span>Pendiente</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color confirmed"></div>
-                <span>Confirmado</span>
-            </div>
-        </div>
+  <div class="field-selector">
+    <select id="fieldSelect">
+      <option value="">Selecciona la cancha...</option>
+      {% for field in fields %}
+      <option value="{{ field.id }}">
+        {{ field.name }} - S/{{ field.price_per_hour }}/hora
+      </option>
+      {% endfor %}
+    </select>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color available"></div>
+        <span>Disponible</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color pending"></div>
+        <span>Pendiente</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color confirmed"></div>
+        <span>Confirmado</span>
+      </div>
     </div>
-    <div id="calendar"></div>
+  </div>
+  <div id="calendar"></div>
 </div>
-
 <!-- Modal for booking -->
 <div id="bookingModal" class="booking-modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
-        <h2>Reservar un cancha</h2>
+        <h2>Reservar cancha</h2>
         <p id="selectedDate"></p>
         <div class="time-slots" id="timeSlots"></div>
-        <button id="bookButton" class="btn btn-primary" disabled>Reservar hora seleccionada</button>
+        <div>
+            <label>
+                <input type="checkbox" id="confirmCheckbox"> Confirmar reserva
+            </label>
+        </div>
+        <button id="bookButton" class="btn btn-primary" disabled>
+            Reservar hora seleccionada
+        </button>
     </div>
 </div>
+
+<div class="field-image">
+  <img id="fieldImage" src="" alt="Imagen de la cancha" />
+</div>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let calendar;
-        let selectedField = null;
-        let selectedTimeSlot = null;
-        const modal = document.getElementById('bookingModal');
-        const closeModal = document.querySelector('.close-modal');
-        const fieldSelect = document.getElementById('fieldSelect');
-        const bookButton = document.getElementById('bookButton');
-    
-        // Inicializar el calendario
-        const calendarEl = document.getElementById('calendar');
-        calendar = new FullCalendar.Calendar(calendarEl, {
-            locale: "es",
-            initialView: 'dayGridMonth',
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek'
-            },
-            selectable: true,
-            selectMirror: true,
-            select: function(info) {
-                if (!selectedField) {
-                    alert('Por favor seleccione un campo primero');
-                    return;
-                }
-                showBookingModal(info.start);
-            },
-            events: function(info, successCallback, failureCallback) {
-                if (!selectedField) {
-                    successCallback([]);
-                    return;
-                }
-                
-                fetch(`/get_bookings/${selectedField}/${info.start.valueOf()}/${info.end.valueOf()}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        successCallback(data.map(booking => ({
-                            title: booking.status,
-                            start: booking.start_time,
-                            end: booking.end_time,
-                            color: getStatusColor(booking.status)
-                        })));
-                    })
-                    .catch(error => {
-                        console.error('Error fetching events:', error);
-                        failureCallback(error);
-                    });
+document.addEventListener("DOMContentLoaded", function () {
+    let calendar;
+    let selectedField = null;
+    let selectedTimeSlot = null;
+    const modal = document.getElementById("bookingModal");
+    const closeModal = document.querySelector(".close-modal");
+    const fieldSelect = document.getElementById("fieldSelect");
+    const bookButton = document.getElementById("bookButton");
+
+    // Variable para almacenar las reservas
+    let bookings = [];
+
+    // Inicializar el calendario
+    const calendarEl = document.getElementById("calendar");
+    calendar = new FullCalendar.Calendar(calendarEl, {
+        locale: "es",
+        initialView: "dayGridMonth",
+        headerToolbar: {
+            left: "prev,next today",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek",
+        },
+        selectable: true,
+        selectMirror: true,
+
+        select: function (info) {
+            if (!selectedField) {
+                alert("Por favor seleccione un campo primero");
+                return;
             }
-        });
-    
-        calendar.render();
-    
-        // Event Listeners
-        fieldSelect.addEventListener('change', function(e) {
-            selectedField = e.target.value;
-            calendar.refetchEvents();
-        });
-    
-        closeModal.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-    
-        window.addEventListener('click', function(e) {
-            if (e.target == modal) {
-                modal.style.display = 'none';
+            showBookingModal(info.start);
+        },
+        events: function (info, successCallback, failureCallback) {
+            if (!selectedField) {
+                successCallback([]);
+                return;
             }
-        });
-    
-        bookButton.addEventListener('click', function() {
-            if (!selectedTimeSlot) return;
-    
-            const bookingData = {
-                field_id: selectedField,
-                date: selectedTimeSlot.date,
-                start_time: selectedTimeSlot.start,
-                end_time: selectedTimeSlot.end
-            };
-    
-            fetch('/create_booking', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(bookingData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Booking created successfully!');
-                    modal.style.display = 'none';
-                    calendar.refetchEvents();
-                } else {
-                    alert(data.error || 'Error creating booking');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Error creating booking');
-            });
-        });
-    
-        // Helper Functions
-        function getStatusColor(status) {
-            const colors = {
-                'available': '#28a745',
-                'pending': '#ffc107',
-                'confirmed': '#dc3545'
-            };
-            return colors[status] || '#6c757d';
-        }
-    
-        function showBookingModal(date) {
-            const formattedDate = date.toLocaleDateString();
-            document.getElementById('selectedDate').textContent = `Fecha seleccionada: ${formattedDate}`;
-            
-            // Generate time slots
-            const timeSlots = document.getElementById('timeSlots');
-            timeSlots.innerHTML = '';
-            
-            const hours = generateTimeSlots(date);
-            hours.forEach(slot => {
-                const div = document.createElement('div');
-                div.className = `time-slot ${slot.available ? 'available' : 'unavailable'}`;
-                div.textContent = `${slot.start} - ${slot.end}`;
-                
-                if (slot.available) {
-                    div.addEventListener('click', () => {
-                        document.querySelectorAll('.time-slot').forEach(el => {
-                            el.classList.remove('selected');
-                        });
-                        div.classList.add('selected');
-                        selectedTimeSlot = {
-                            date: date,
-                            start: slot.start,
-                            end: slot.end
-                        };
-                        bookButton.disabled = false;
-                    });
-                }
-                
-                timeSlots.appendChild(div);
-            });
-    
-            modal.style.display = 'block';
-        }
-    
-        function generateTimeSlots(date) {
-            // Este es un ejemplo simple - deberías obtener la disponibilidad real del servidor
-            const slots = [];
-            const startHour = 8; // 8 AM
-            const endHour = 22; // 10 PM
-            
-            for (let hour = startHour; hour < endHour; hour++) {
-                slots.push({
-                    start: `${hour}:00`,
-                    end: `${hour + 1}:00`,
-                    available: Math.random() > 0.3 // Simulación de disponibilidad
+
+            fetch(`/get_bookings/${selectedField}/${info.start.valueOf()}/${info.end.valueOf()}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    // Actualizar la variable global `bookings` con los datos del servidor
+                    bookings = data;
+
+                    // Convertir los datos para FullCalendar
+                    const events = data.map((booking) => ({
+                        title: booking.status,
+                        start: booking.start,
+                        end: booking.end,
+                        color: getStatusColor(booking.status),
+                    }));
+                    successCallback(events);
+                })
+                .catch((error) => {
+                    console.error("Error fetching events:", error);
+                    failureCallback(error);
                 });
-            }
-            
-            return slots;
+        },
+    });
+
+    calendar.render();
+
+    // Event Listeners
+    fieldSelect.addEventListener("change", function (e) {
+        selectedField = e.target.value;
+        calendar.refetchEvents();
+    });
+
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+        selectedTimeSlot = null;
+        bookButton.disabled = true;
+    });
+
+    window.addEventListener("click", function (e) {
+        if (e.target == modal) {
+            modal.style.display = "none";
         }
     });
-    </script>
+
+    bookButton.addEventListener("click", function () {
+    if (!selectedTimeSlot || !selectedField) {
+        alert("Por favor seleccione un campo y un horario");
+        return;
+    }
+
+    // Verificar si el checkbox está marcado
+    const confirmCheckbox = document.getElementById("confirmCheckbox");
+    const status = confirmCheckbox.checked ? "confirmed" : "pending";
+
+    const bookingData = {
+        field_id: selectedField,
+        date: selectedTimeSlot.date.toISOString().split("T")[0],
+        start_time: selectedTimeSlot.start,
+        end_time: selectedTimeSlot.end,
+        status: status, // Enviar el estado (pending o confirmed)
+    };
+
+    fetch("/create_booking", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingData),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                alert("Reserva creada exitosamente!");
+                modal.style.display = "none";
+                calendar.refetchEvents();
+                selectedTimeSlot = null;
+                bookButton.disabled = true;
+            } else {
+                alert(data.error || "Error al crear la reserva");
+            }
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+            alert("Error al crear la reserva");
+        });
+});
+
+    // Helper Functions
+    function getStatusColor(status) {
+        const colors = {
+            available: "#28a745",
+            pending: "#ffc107",
+            confirmed: "#dc3545",
+        };
+        return colors[status] || "#6c757d";
+    }
+
+    function showBookingModal(date) {
+        const formattedDate = date.toLocaleDateString();
+        document.getElementById("selectedDate").textContent = `Fecha seleccionada: ${formattedDate}`;
+
+        // Generate time slots
+        const timeSlots = document.getElementById("timeSlots");
+        timeSlots.innerHTML = "";
+
+        const hours = generateTimeSlots(date);
+        hours.forEach((slot) => {
+            const div = document.createElement("div");
+            div.className = `time-slot ${slot.status}`; // Asignar la clase según el estado
+            div.textContent = `${slot.start} - ${slot.end}`;
+
+            if (slot.status === "available") {
+                div.addEventListener("click", () => {
+                    document.querySelectorAll(".time-slot").forEach((el) => {
+                        el.classList.remove("selected");
+                    });
+                    div.classList.add("selected");
+                    selectedTimeSlot = {
+                        date: date,
+                        start: slot.start,
+                        end: slot.end,
+                    };
+                    bookButton.disabled = false;
+                });
+            } else {
+                div.classList.add("unavailable"); // Deshabilitar el slot si no está disponible
+            }
+
+            timeSlots.appendChild(div);
+        });
+
+        modal.style.display = "block";
+    }
+
+    function generateTimeSlots(date) {
+        const slots = [];
+        const startHour = 8; // 8 AM
+        const endHour = 22; // 10 PM
+
+        for (let hour = startHour; hour < endHour; hour++) {
+            const startTime = `${hour.toString().padStart(2, "0")}:00`;
+            const endTime = `${(hour + 1).toString().padStart(2, "0")}:00`;
+
+            // Verificar si el slot está ocupado
+            const booking = getBookingForSlot(date, startTime);
+            console.log(booking)
+            // Determinar el estado del slot
+            let status = "available"; // Por defecto, el slot está disponible (verde)
+            if (booking) {
+            // Si el estado es "cancelled", considerar el slot como disponible
+            if (booking.status === "cancelled") {
+                status = "available";
+            } else {
+                status = booking.status; // Usar el estado de la reserva (pending, confirmed, etc.)
+            }
+        }
+
+
+            slots.push({
+                start: startTime,
+                end: endTime,
+                status: status, // Estado del slot (available, pending, confirmed)
+            });
+        }
+        return slots;
+    }
+
+    function getBookingForSlot(date, startTime) {
+    const dateStr = date.toISOString().split("T")[0];
+    
+    return bookings
+        .filter(booking => booking.status !== 'cancelled')
+        .find((booking) => {
+            const bookingDate = booking.start.split(" ")[0];
+            const bookingStartTime = booking.start.split(" ")[1].substring(0, 5);
+            const bookingEndTime = booking.end.split(" ")[1].substring(0, 5);
+            
+            return (
+                bookingDate === dateStr &&
+                startTime >= bookingStartTime &&
+                startTime < bookingEndTime
+            );
+        });
+}
+});
+
+document.getElementById("fieldSelect").addEventListener("change", function () {
+    const fieldId = this.value;
+    const fieldImage = document.getElementById("fieldImage");
+
+    if (fieldId) {
+        // Aquí defines la ruta de la imagen según el ID de la cancha
+        fieldImage.src = `/static/img/fields/${fieldId}.jpg`; // Ajusta la ruta según tu estructura
+    } else {
+        fieldImage.src = ""; // Imagen por defecto o vacía cuando no hay selección
+    }
+});  
+</script>
 {% endblock %}

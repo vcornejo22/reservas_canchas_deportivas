@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .payment-method-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.payment-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+.payment-method-card {
+    background: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.payment-method-card .card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+</style>
+<div class="payment-method-container">
+    <h2>Agregar Método de Pago</h2>
+    <form method="POST" action="{{ url_for('add_payment_method') }}" class="payment-form">
+        <div class="form-group">
+            <label for="card_number">Número de Tarjeta:</label>
+            <input type="text" id="card_number" name="card_number" maxlength="16" required>
+        </div>
+
+        <div class="form-group">
+            <label for="card_holder">Nombre del Titular:</label>
+            <input type="text" id="card_holder" name="card_holder" required>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group half">
+                <label for="expiration_month">Mes de Expiración:</label>
+                <select id="expiration_month" name="expiration_month" required>
+                    {% for month in range(1, 13) %}
+                        <option value="{{ month }}">{{ '%02d' % month }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group half">
+                <label for="expiration_year">Año de Expiración:</label>
+                <select id="expiration_year" name="expiration_year" required>
+                    {% for year in range(current_year, current_year + 10) %}
+                        <option value="{{ year }}">{{ year }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="card_type">Tipo de Tarjeta:</label>
+            <select id="card_type" name="card_type" required>
+                <option value="visa">Visa</option>
+                <option value="mastercard">Mastercard</option>
+                <option value="amex">American Express</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Agregar Tarjeta</button>
+    </form>
+</div>
+{% endblock %}

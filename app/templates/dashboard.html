@@ -1,5 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
+<style>
+    .booking-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.status-confirmed {
+    background-color: #28a745;
+    color: white;
+}
+</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
 <div class="dashboard-container">
     <h2>Bienvenido, {{ session['username'] }}!</h2>
@@ -25,11 +49,14 @@
                             <p><strong>Total Price:</strong> S/{{ "%.2f"|format(booking.total_price) }}</p>
                         </div>
                         {% if booking.status == 'pending' %}
-                            <div class="booking-actions">
-                                <form method="POST" action="{{ url_for('cancel_booking', booking_id=booking.id) }}" style="display: inline;">
-                                    <button type="submit" class="btn btn-danger">Cancel</button>
-                                </form>
-                            </div>
+                        <div class="booking-actions">
+                            <form method="POST" action="{{ url_for('confirm_booking', booking_id=booking.id) }}" style="display: inline;">
+                                <button type="submit" class="btn btn-success">Confirmar</button>
+                            </form>
+                            <form method="POST" action="{{ url_for('cancel_booking', booking_id=booking.id) }}" style="display: inline;">
+                                <button type="submit" class="btn btn-danger">Cancel</button>
+                            </form>
+                        </div>
                         {% endif %}
                     </div>
                 {% endfor %}
